@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { Container } from 'react-bootstrap';
+
 import axios from 'axios';
 
 import ListaIncendios from './ListaIncendios';
@@ -33,13 +35,13 @@ function Incendios(){
   }, [ updateIncendio ]);  
 
   return (
-    <div>
+    <Container>
       <AdicionaIncendio setNewIncendio={setNewIncendio}/>
       <ListaIncendios 
         data={data} 
         setDeleteIncendio={setDeleteIncendio}
         setUpdateIncendio={setUpdateIncendio}/>
-    </div>
+    </Container>
   );
 }
 

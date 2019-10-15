@@ -1,14 +1,16 @@
 import React from 'react';
 
+import { Button, ListGroup } from 'react-bootstrap';
+
 const ApresentationIncendio = ({ incendio, handleClickDelete, toggleUpdate }) => {
 
   return (
-    <div  key={incendio._id}>
-      <span>{incendio.latitude.$numberDecimal}</span>
+    <ListGroup.Item key={incendio._id}>
+      <span>{incendio.latitude.$numberDecimal} - </span>
       <span>{incendio.longitude.$numberDecimal}</span>
-      <button onClick={toggleUpdate}>editar</button>
-      <button onClick={handleClickDelete}>deletar</button>
-    </div>
+      <Button variant="warning" onClick={toggleUpdate}>editar</Button>
+      <Button variant="danger" onClick={handleClickDelete}>deletar</Button>
+    </ListGroup.Item>
   );
 }
 

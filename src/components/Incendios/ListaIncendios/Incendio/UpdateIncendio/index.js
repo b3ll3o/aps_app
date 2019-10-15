@@ -1,24 +1,25 @@
 import React from 'react';
 
-const UpdateIncendio = ({ handleClickUpdate, incendio, setLatitude, setLongitude  }) => {
+import { Button, Form, Row, Col } from 'react-bootstrap';
+
+const UpdateIncendio = ({ handleClickUpdate, incendio, setLatitude, setLongitude }) => {
 
   return (
     <div>
-      <form onSubmit={handleClickUpdate}>
-        <label>
-          latitude:
-          <input 
-            placeholder={incendio.latitude.$numberDecimal}
-            onChange={e => setLatitude(e.target.value)}></input>
-        </label>
-        <label>
-          longitude:
-          <input 
-            placeholder={incendio.longitude.$numberDecimal}
-            onChange={e => setLongitude(e.target.value)}></input>
-        </label>
-        <button type="submit">editar</button>
-      </form>
+      <Form onSubmit={handleClickUpdate}>
+        <Row>
+          <Col>
+          <Form.Control placeholder={incendio.latitude.$numberDecimal}
+              onChange={e => setLatitude(e.target.value)}></Form.Control>
+          </Col>
+          <Col>
+            <Form.Control
+              placeholder={incendio.longitude.$numberDecimal}
+              onChange={e => setLongitude(e.target.value)}></Form.Control>
+          </Col>
+          <Button variant="success" type="submit">editar</Button>
+        </Row>
+      </Form>
     </div>
   );
 }
